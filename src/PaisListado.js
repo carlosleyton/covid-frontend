@@ -58,9 +58,7 @@ export default class PaisListado extends React.Component {
 											onClick={() => {
 												window.location = 'historico/' + row.Country
 											}}
-										>
-											Ver histórico
-										</Button>
+										></Button>
 									</TableCell>
 								</TableRow>
 							))}
