@@ -5,16 +5,13 @@ import TableCell from '@material-ui/core/TableCell'
 import TableContainer from '@material-ui/core/TableContainer'
 import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
-import { TablePagination } from '@material-ui/core'
 import Paper from '@material-ui/core/Paper'
 import axios from 'axios'
 import './PaisListado.css'
 import { useParams } from 'react-router-dom'
 import { withRouter } from 'react-router'
-
+import ScrollTopArrow from './ScrollArrow'
 class Historico extends React.Component {
-	// We can use the `useParams` hook here to access
-	// the dynamic pieces of the URL.
 	constructor(props) {
 		super(props)
 
@@ -73,6 +70,7 @@ class Historico extends React.Component {
 						</Table>
 					</TableContainer>
 				</div>
+				<ScrollTopArrow />
 			</div>
 		)
 	}
