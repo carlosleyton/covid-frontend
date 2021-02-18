@@ -9,7 +9,7 @@ import Paper from '@material-ui/core/Paper'
 import axios from 'axios'
 import { Button } from '@material-ui/core'
 import './PaisListado.css'
-
+import AddIcon from '@material-ui/icons/Add'
 export default class PaisListado extends React.Component {
 	state = {
 		paises: [],
@@ -18,14 +18,13 @@ export default class PaisListado extends React.Component {
 	componentDidMount() {
 		axios.get(`https://api.covid19api.com/summary`).then((res) => {
 			var paises = res.data.Countries
-			//console.log(paises);
 			this.setState({ paises })
 		})
 	}
 
 	render() {
 		return (
-			<div style={{ height: '80%', width: '95%' }}>
+			<div style={{ height: '80%', width: '90%' }}>
 				<TableContainer component={Paper}>
 					<Table
 						aria-label="a dense table"
@@ -53,8 +52,9 @@ export default class PaisListado extends React.Component {
 									<TableCell align="right">
 										<Button
 											variant="contained"
-											color="default"
+											color="primary"
 											href="#"
+											startIcon={<AddIcon />}
 											onClick={() => {
 												window.location = 'historico/' + row.Country
 											}}

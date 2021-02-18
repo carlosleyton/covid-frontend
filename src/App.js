@@ -1,24 +1,23 @@
 import React from 'react'
 import './App.css'
-import { Link, Route, Switch } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import PaisListado from './PaisListado'
 import Historico from './Historico'
+import { Button } from '@material-ui/core'
+import Icon from '@material-ui/core/Icon'
+import HomeIcon from '@material-ui/icons/Home'
 
-const Home = () => (
-	<div>
-		<h2>Inicio</h2>
-	</div>
-)
 function App() {
 	return (
 		<div>
-			<nav className="navbar navbar-light">
-				<ul className="nav navbar-nav">
-					<li>
-						<Link to="/">Inicio</Link>
-					</li>
-				</ul>
-			</nav>
+			<Button
+				variant="contained"
+				color="default"
+				startIcon={<HomeIcon />}
+				href="../"
+			>
+				Listado general
+			</Button>
 
 			<Switch>
 				<Route exact path="/">
