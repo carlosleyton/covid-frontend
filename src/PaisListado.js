@@ -16,6 +16,7 @@ export default class PaisListado extends React.Component {
 	}
 
 	componentDidMount() {
+		//axios.get(`https://localhost:9090/countries`).then((res) => {
 		axios.get(`https://api.covid19api.com/summary`).then((res) => {
 			var paises = res.data.Countries
 			this.setState({ paises })

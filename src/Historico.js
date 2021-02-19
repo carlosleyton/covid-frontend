@@ -25,6 +25,7 @@ class Historico extends React.Component {
 	componentDidMount() {
 		const id = this.props.match.params.id
 		axios
+			//.get(`https://localhost:9090/days/` + id)
 			.get(`https://api.covid19api.com/country/` + id)
 			.then((response) =>
 				this.setState({ dias: response.data, pais_nombre: id }),
